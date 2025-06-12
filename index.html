@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Distribution Function Plotter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Angular Distribution Function Plotter</h1>
+    <p>How to use: Select an *.xyz file, set the radius and number of bins, then click Plot.</p>
+    
+    <div id="uploadSection">
+        <label for="fileInput" id="fileInputLabel">Upload *.xyz file</label>
+        <input type="file" id="fileInput" accept=".xyz">
+        <div class="input-group">
+            <label for="rMaxInput">Radius (rMax):</label>
+            <input type="number" id="rMaxInput" step="0.1" value="4.5" min="0.1">
+        </div>
+        <div class="input-group">
+            <label for="numBinsInput">Number of Bins:</label>
+            <input type="number" id="numBinsInput" value="200" min="1">
+        </div>
+        <button id="plotButton" disabled>Plot</button>
+    </div>
+    
+    <div id="chartContainer">
+        <canvas id="adfChart"></canvas>
+    </div>
+    <div id="error" class="error"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
